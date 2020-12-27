@@ -1,0 +1,11 @@
+mat-toolbar-row {
+	height: 80px;
+
+	&:first-child {
+		background-color: white;
+	}
+	&:last-child {
+		color: white;
+		background-color: #0147cb;
+	}
+}

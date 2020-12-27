@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { SuccessfulRequestComponent } from './successful-request.component';
 
+import { MatButtonModule } from '@angular/material/button'; 
+
 const routes: Routes = [{
 	path: '',
 	component: SuccessfulRequestComponent
@@ -12,7 +14,8 @@ const routes: Routes = [{
   declarations: [SuccessfulRequestComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    MatButtonModule
   ]
 })
 

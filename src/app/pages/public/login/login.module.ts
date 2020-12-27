@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login.component';
 import { Routes, RouterModule } from '@angular/router';
 
+import { MatButtonModule } from '@angular/material/button'; 
+
 const routes: Routes = [{
 	path: '',
 	component: LoginComponent
@@ -12,7 +14,8 @@ const routes: Routes = [{
   declarations: [LoginComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    MatButtonModule
   ]
 })
 

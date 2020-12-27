@@ -1,0 +1,8 @@
+<aside>
+	<mat-nav-list *ngFor="let sectionLinks of links">
+		<h1>{{ sectionLinks.name }}</h1>
+		<mat-list-item *ngFor="let link of sectionLinks.list">
+			<p>{{ link }}</p>
+		</mat-list-item>
+	</mat-nav-list>
+</aside>

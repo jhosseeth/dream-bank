@@ -1,0 +1,12 @@
+:host {
+	color: white;
+	height: 100vh;
+	display: block;
+	background: rgb(0,24,52);
+	background: linear-gradient(0deg, rgba(0,24,52,1) 0%, rgba(1,48,104,1) 100%);
+
+	/* -- Given values
+	background: rgb(1,38,83);
+	background: linear-gradient(0deg, rgba(1,38,83,1) 0%, rgba(1,48,104,1) 100%); 
+	*/
+}
