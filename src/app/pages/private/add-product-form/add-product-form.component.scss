@@ -1,0 +1,86 @@
+header {
+	text-align: center;
+
+	h4 {
+		padding-bottom: 5px;
+		
+		span {
+			border-bottom: solid 3px cyan;
+		}
+	}
+}
+
+section {
+	display: flex;
+	justify-content: center;
+
+	fieldset {
+		width: 400px;
+		border: none;
+
+		mat-form-field {
+			width: 100%;
+			margin: 10px 0;
+
+			input::placeholder {
+				color: white;
+				opacity: 0.2;
+			}
+
+			mat-hint {
+				color: white;
+				opacity: 0.4;
+			}
+		}
+
+		a {
+			width: 100%;
+			border: none;
+			margin: 20px 0;
+			display: block;
+			border-radius: 20px;
+
+			&.btn-primary {
+				color: #001b3d;
+				font-size: 1rem;
+				background-color: cyan;
+
+				&:hover {
+					background-color: darkcyan;
+				}
+			}
+
+			&.btn-cancel {
+				&:hover {
+					background-color: #000b1a;
+				}
+			}
+		}
+	}
+}
+
+::ng-deep {
+   $custom-main-color: white;
+   $custom-label-color: rgba(0, 0, 0, .6);
+
+   // Input outline color
+   .mat-form-field-appearance-outline .mat-form-field-outline {
+      color: $custom-main-color !important;
+   }
+
+   // Label color
+   .mat-form-field-label {
+      color: $custom-main-color !important;
+   }
+
+   // Outline color [focused]
+   .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+      color: $custom-main-color !important;
+   }
+
+   // Label color [focused]
+   .mat-form-field.mat-focused .mat-form-field-label {
+      color: $custom-main-color !important;
+  }
+
+}

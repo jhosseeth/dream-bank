@@ -24,8 +24,8 @@ export class TransactionsComponent implements OnInit {
 		// Load transactions data by default
 		this.httpService.getTransactions(1).subscribe(response => {
 			let transactionsList = this.getTransactionsList(response);
-			this.setDataSource(transactionsList);
 			this.lastMonthAverage = this.getLastMonthAverage(transactionsList);
+			this.setDataSource(transactionsList);
 		});
 	}
 
@@ -71,7 +71,7 @@ export class TransactionsComponent implements OnInit {
 		this.dataSource.sort = this.sort;
 	}
 
-	/** Calculate the average in the last month
+	/** Calculate the average amount of transaction in the last month
 	*
 	* @param { transactionsList } Array <Transaction>
 	* @return { lastMonthAverage } String

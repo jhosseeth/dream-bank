@@ -2,8 +2,10 @@
 	color: white;
 	height: 100vh;
 	display: block;
-	background: rgb(0,24,52);
-	background: linear-gradient(0deg, rgba(0,24,52,1) 0%, rgba(1,48,104,1) 100%);
+	background: #012e65;
+	background: linear-gradient(0deg, rgb(0, 14, 32) 0%, rgb(1, 46, 101) 70%);
+
+	img	{ width: 100%; }
 
 	/* -- Given values
 	background: rgb(1,38,83);

@@ -1,10 +1,25 @@
-<mat-form-field appearance="outline">
-	<mat-label>Outline form field</mat-label>
-	<input matInput placeholder="Placeholder">
-	<mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-	<mat-hint>Hint</mat-hint>
-</mat-form-field>
+<header>
+	<h4><span>Request</span></h4>
+	<h1>New product</h1>
+	<p>Instant payments and a lot of withdrawal methods available.</p>
+</header>
 
-<!-- <button mat-stroked-button>Send</button> -->
-<a mat-stroked-button routerLink="success">Send</a>
-<a mat-stroked-button routerLink="../account-summary">Cancel</a>
+<section>
+	<fieldset>
+		<mat-form-field appearance="outline">
+			<mat-label>Cellphone</mat-label>
+			<input matInput placeholder="XXX XXX XXXX">
+			<mat-hint>Write the number you want to be contacted</mat-hint>
+		</mat-form-field>
+		
+		<mat-form-field appearance="outline">
+			<mat-label>Monthly income</mat-label>
+			<input matInput placeholder="$$$">
+			<mat-hint>Give us an average income</mat-hint>
+		</mat-form-field>
+
+		<!-- <button mat-stroked-button>Send</button> -->
+		<a mat-stroked-button routerLink="success" class="btn-primary">Send</a>
+		<a mat-stroked-button routerLink="../account-summary" class="btn-cancel">Cancel</a>
+	</fieldset>
+</section>
