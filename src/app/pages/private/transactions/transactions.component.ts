@@ -14,6 +14,7 @@ export class TransactionsComponent implements OnInit {
 
 	public displayedColumns: string[] = ['date', 'description', 'currency', 'value'];
 	public dataSource: MatTableDataSource <Transaction>;
+	public lastMonthAverage: string = "";
 
 	@ViewChild(MatSort) sort: MatSort;
 
@@ -24,7 +25,7 @@ export class TransactionsComponent implements OnInit {
 		this.httpService.getTransactions(1).subscribe(response => {
 			let transactionsList = this.getTransactionsList(response);
 			this.setDataSource(transactionsList);
-			this.getAverage(transactionsList);
+			this.lastMonthAverage = this.getLastMonthAverage(transactionsList);
 		});
 	}
 
@@ -54,28 +55,42 @@ export class TransactionsComponent implements OnInit {
 	* @return { formattedDate }
 	*/
 	getDate(date: string) {
-		let utcStr: string = new Date('2020-12-25T22:32:42.403Z').toUTCString();
+		let utcStr: string = new Date(date).toUTCString();
 		let fullDate: any = new Date(utcStr);
 		let formattedDate: string = `${fullDate.getDate()}/${fullDate.getMonth() + 1}/${fullDate.getFullYear()}`;
 		return formattedDate;
 	}
 
-	/** Get a formatted date DD/MM/YYYY
+	/** Set the Transactions to the table module
 	*
 	* @param { transactionsList } Array <Transaction>
-	* @return { this.dataSource }
+	* @return { this.dataSource } MatTableDataSource <Transaction>
 	*/
 	setDataSource(transactionsList) {
 		this.dataSource = new MatTableDataSource(transactionsList);
 		this.dataSource.sort = this.sort;
 	}
 
-	/** Get a formatted date DD/MM/YYYY
+	/** Calculate the average in the last month
 	*
-	* @param { date }
-	* @return { formattedDate }
+	* @param { transactionsList } Array <Transaction>
+	* @return { lastMonthAverage } String
 	*/
-	getAverage(transactionsList) {
-		console.log("esta:", transactionsList);
+	getLastMonthAverage(transactionsList) {
+		let transactionsValue = transactionsList.map(item => {
+			let thisMonth = new Date().getMonth() + 1;
+			let transactionMonth = item.date.split("/")[1];
+			let intTransMonth = parseInt(transactionMonth);
+
+			if (intTransMonth === thisMonth) {
+				let transactionValue = parseFloat(item.value);
+				return transactionValue;
+			}
+		});
+
+		let transactionsSum = transactionsValue.reduce((prev, current) => prev + current);
+		let lastMonthAverage = transactionsSum / transactionsValue.length;
+
+		return lastMonthAverage.toFixed(2);
 	}
 }
