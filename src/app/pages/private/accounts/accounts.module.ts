@@ -4,6 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { AccountsComponent } from './accounts.component';
 
 import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatCardModule } from '@angular/material/card';
 
 const routes: Routes = [{
 	path: '',
@@ -15,7 +17,9 @@ const routes: Routes = [{
 	imports: [
 		CommonModule,
 		RouterModule.forChild(routes),
-		MatTableModule
+		MatTableModule,
+		MatSortModule,
+		MatCardModule
 	],
 	exports: [RouterModule]
 })

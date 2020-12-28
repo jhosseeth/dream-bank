@@ -1,3 +1,60 @@
-.container {
-	padding: 40px;
+mat-card {
+
+	&:first-child {
+		display: flex;
+		margin-bottom: 20px;
+		background-color: #e5e9f4;
+		justify-content: space-between;
+
+		span {
+			margin-top: 5px;
+		}
+
+		a {
+			margin: 0;
+
+			img {
+				height: 30px;
+			}
+		} 
+	}
+
+	&.table-card {
+		padding: 15px 0 20px;
+		margin-bottom: 50px;
+
+		mat-card-header {
+			mat-card-title {
+				color: grey;
+				margin-left: 10px;
+				font-size: 0.8rem;
+				text-transform: uppercase;
+			}
+		}
+
+		mat-card-content {
+			table {
+				width: 100%;
+				border-top: solid 1px #e8e8e8;
+				
+				th, td { border: none; }
+				th {
+					color: #0147CA;
+					font-size: 0.9rem;
+				}
+
+				.mat-row {
+					td { color: grey !important; }
+
+					&:hover {
+						background-color: #f2f2f2;
+
+						td:first-child {
+							border-left: solid 2px cyan;
+						}
+					}
+				}
+			}
+		}
+	} 
 }
