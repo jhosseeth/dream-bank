@@ -2,15 +2,39 @@
 	<mat-toolbar>
 		<mat-toolbar-row>
 			<ul>
-				<li>Notifications</li>
-				<li>Mssages</li>
-				<li>Profile</li>
+				<li class="profile">
+					<button mat-button [matMenuTriggerFor]="menu">
+						<img src="assets/img/user.png">
+						<span>John Doe</span>
+						<mat-icon>arrow_drop_down</mat-icon>
+					</button>
+					<mat-menu #menu="matMenu">
+						<button mat-menu-item>
+							<mat-icon>settings</mat-icon>
+							<span>Settings</span>
+						</button>
+						<button mat-menu-item>
+							<mat-icon>power_settings_new</mat-icon>
+							<span>Logout</span>
+						</button>
+					</mat-menu>
+				</li>
+				<li class="comments">
+					<button mat-icon-button>
+						<mat-icon matBadge="5" matBadgeSize="small">mode_comment</mat-icon>
+					</button>
+				</li>
+				<li class="notifications">
+					<button mat-icon-button>
+						<mat-icon matBadge="2" matBadgeSize="small">notifications</mat-icon>
+					</button>
+				</li>
 			</ul>
 		</mat-toolbar-row>
 
 		<mat-toolbar-row>
 			<div class="session-info">
-				<img src="" alt="">
+				<img src="assets/img/user.png">
 				<h5>Welcome back, John Doe!</h5>
 				<p>Your last login was 26/12/2020 05:39, Bogotá.</p>
 			</div>
@@ -19,7 +43,7 @@
 				<p>$17.592,80</p>
 			</div>
 			<div class="actions">
-				<a mat-stroked-button routerLink="../request-new-product">New Product</a>
+				<a mat-stroked-button routerLink="../request-new-product">Request new product</a>
 				<button mat-stroked-button>Make a Transfer</button>
 			</div>
 		</mat-toolbar-row>

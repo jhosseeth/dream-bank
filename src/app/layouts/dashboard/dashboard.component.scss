@@ -2,11 +2,29 @@
 	display: flex;
 
 	app-sidenav {
-		width: 18vw;
-		height: auto;
+		width: 20vw;
+		height: 100vh;
+		overflow: auto;
+
+		/* Scroll for Gekko engine*/
+		scrollbar-color: #2f699b #032653;
+  		scrollbar-width: thin;
+
+		/* Webkit */
+		&::-webkit-scrollbar { width: 6px;	}
+		&::-webkit-scrollbar-track { background: #032653; }
+		&::-webkit-scrollbar-thumb { background: #2f699b; }
 	}
 
 	main {
-		width: 82vw;
+		width: 80vw;
+		height: 100vh;
+		overflow: hidden;
+
+		section {
+			padding: 20px 60px;
+			height: calc(100vh - 250px);
+			overflow: auto;
+		}
 	}
 }

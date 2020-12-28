@@ -13,7 +13,19 @@ import { SidenavComponent } from './layouts/dashboard/sidenav/sidenav.component'
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { MatBadgeModule } from '@angular/material/badge';
 import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+
+const materialModules: any[] = [
+    MatToolbarModule,
+    MatButtonModule,
+    MatBadgeModule,
+    MatListModule,
+    MatIconModule,
+    MatMenuModule
+];
 
 @NgModule({
   declarations: [
@@ -28,9 +40,7 @@ import { MatListModule } from '@angular/material/list';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatListModule
+    materialModules
   ],
   providers: [],
   bootstrap: [AppComponent]

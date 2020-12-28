@@ -1,13 +1,50 @@
 aside {
-	background-color: #03295f;
+	padding-bottom: 50px;
+	background-color: #032653;
 
-	h1 {
-		color: cyan;
-		padding: 0 32px;
+	.logo {
+		display: flex;
+		justify-content: center;
+
+		img {
+			height: 80px;
+			margin: 20px auto;
+		}
 	}
 
-	p {
-		padding-left: 16px;
-		color: white !important;
+	mat-nav-list {
+
+		h1 {
+			color: cyan;
+			padding-left: 40px;
+			font-weight: 300;
+			font-size: 0.9rem;
+			letter-spacing: 0.15rem;
+			text-transform: uppercase;
+		}
+
+		mat-list-item {
+
+			&.active {
+				background: rgb(3,56,100);
+				background: linear-gradient(90deg, rgba(3,56,100,1) 0%, rgba(3,38,83,1) 100%);
+
+				&::before {
+					content: "";
+					height: 48px;
+					position: absolute;
+					display: inline-block;
+					border-right: solid 3px aqua;
+				}
+			}
+
+			p {
+				margin: 0;
+				font-weight: 300;
+				font-size: 0.9rem;
+				padding-left: calc(40px - 16px);
+				color: white !important;
+			}
+		}
 	}
 }

@@ -1,7 +1,10 @@
 <aside>
+	<div class="logo">
+		<img src="assets/img/logo-bg-blue.png" alt="">
+	</div>
 	<mat-nav-list *ngFor="let sectionLinks of links">
 		<h1>{{ sectionLinks.name }}</h1>
-		<mat-list-item *ngFor="let link of sectionLinks.list">
+		<mat-list-item *ngFor="let link of sectionLinks.list" [ngClass]="{'active': link === 'Account Summary'}">
 			<p>{{ link }}</p>
 		</mat-list-item>
 	</mat-nav-list>
